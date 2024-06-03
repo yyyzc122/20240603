@@ -5,6 +5,9 @@ https://www.tensorflow.org/hub/tutorials/movenet
 
 */
 
+function preload(){	
+	rightEarImg= loadImage("car.gif")	
+}
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
 
@@ -52,7 +55,9 @@ function draw() {
   translate(cam.width, 0);
   scale(-1, 1);
   image(cam, 0, 0);
-  
+  push()
+   image("car.gif",0,0,width,height)
+  pop()
 }
 
 function drawSkeleton() {
@@ -60,6 +65,18 @@ function drawSkeleton() {
   for (let i = 0; i < poses.length; i++) {
     pose = poses[i];
     // shoulder to wrist
+
+    partA = pose.keypoints[0]
+    
+    if(partA.score > 0.1){
+    //line(partA.x,partA.y,partB.x,partB.y)
+    push()
+      textSize(40)
+      scale(-1,1)
+      text("412737065,車宜蓁",partA.x-width,partA.y-150)
+      //print(partA.x)
+    pop()
+    }
     for (j = 5; j < 9; j++) {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
         partA = pose.keypoints[j];
@@ -71,7 +88,7 @@ function drawSkeleton() {
     partA = pose.keypoints[5];
     partB = pose.keypoints[6];
     if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
+      //line(partA.x, partA.y, partB.x, partB.y);
       push()
        image(car.gif,partA.x-75,partA.y-75,150,150)
        image(car.gif,partB.x-75,partB.y-75,150,150)
