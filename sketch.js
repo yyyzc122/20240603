@@ -90,8 +90,8 @@ function drawSkeleton() {
     if (partA.score > 0.1 && partB.score > 0.1) {
       //line(partA.x, partA.y, partB.x, partB.y);
       push()
-       image(car.gif,partA.x-75,partA.y-75,150,150)
-       image(car.gif,partB.x-75,partB.y-75,150,150)
+       image(carImg,partA.x-75,partA.y-75,150,150)
+       image(carImg,partB.x-75,partB.y-75,150,150)
       pop()
       
     }
