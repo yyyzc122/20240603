@@ -56,9 +56,7 @@ function draw() {
   translate(cam.width, 0);
   scale(-1, 1);
   image(cam, 0, 0);
-  push()
-   image("car.gif",0,0,width,height)
-  pop()
+
 }
 
 function drawSkeleton() {
