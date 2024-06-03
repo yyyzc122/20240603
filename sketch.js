@@ -5,7 +5,6 @@ https://www.tensorflow.org/hub/tutorials/movenet
 
 */
 
-
 function preload(){	
 	carImg= loadImage("car.gif")	
 }
@@ -56,7 +55,7 @@ function draw() {
   translate(cam.width, 0);
   scale(-1, 1);
   image(cam, 0, 0);
-
+  
 }
 
 function drawSkeleton() {
