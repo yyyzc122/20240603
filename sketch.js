@@ -53,9 +53,8 @@ function draw() {
   scale(-1, 1);
   image(cam, 0, 0);
   push()
-       image(car.gif,partA.x-75,partA.y-75,150,150)
-       image(car.gif,partB.x-75,partB.y-75,150,150)
-      pop()
+   image("car.gif",0,0,width,height)
+  pop()
 }
 
 function drawSkeleton() {
