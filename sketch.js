@@ -7,7 +7,7 @@ https://www.tensorflow.org/hub/tutorials/movenet
 
 
 function preload(){	
-	rightEarImg= loadImage("car.gif")	
+	carImg= loadImage("car.gif")	
 }
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
